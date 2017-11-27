@@ -1,0 +1,41 @@
+body {
+  background-color: #666;
+}
+
+#rightSide {
+  margin-top: 40px;
+}
+
+#customBreak {
+  margin-bottom: 40px;
+}
+
+p {
+  font-size: 16px;
+}
+
+.page-header {
+  border-bottom: none;
+}
+
+h4 {
+  margin-top: 20px;
+}
+
+img {
+  margin: 10px;
+}
+
+img:first-child {
+  width: 20%;
+  height: 20%;
+}
+
+.gemImg {
+  width: 25%;
+  height: 25%;
+}
+
+#choiceGems {
+  margin-top: 30px;
+}

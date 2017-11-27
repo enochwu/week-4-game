@@ -31,3 +31,12 @@ Pseudo code
       - Randomly generate new values for price properties of gem objects.
 
       - Reset var Basket
+
+  -------------------------------------
+
+  To Do list:
+
+  1. Now organize code into functions.
+  2. Call functions where appropriate.
+  3. Adjust layout at different window sizes.
+  4. Fine tune look of game.
