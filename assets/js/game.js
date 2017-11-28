@@ -68,7 +68,7 @@ $(window).on('load', function(e){
     //This code pulls the gem price from the attribute
     // created above with the (gemImg)'s. "This" referencing the value of the
     // image the user currently pressing on.
-    var gemPrice = ($(this).attr("data-gemPrice"));
+    var gemPrice = ($(this).attr("data-gemprice"));
     console.log(gemPrice);
 
     //Since attributes on HTML elements are strings, we must convert it
