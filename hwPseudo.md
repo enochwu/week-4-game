@@ -35,8 +35,6 @@ Pseudo code
   -------------------------------------
 
   To Do list:
-
-  1. Now organize code into functions.
-  2. Call functions where appropriate.
-  3. Adjust layout at different window sizes.
-  4. Fine tune look of game.
+  1. Adjust layout at different window sizes.
+  2. Fine tune look of game.
+  3. Check on a why the last sum is not loading before reset.
