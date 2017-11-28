@@ -31,8 +31,9 @@ $(window).on('load', function(e){
 
         //Assuring there are not duplicates
         if (gemArray.indexOf(x) == -1) {
-          gemArray.push(x)
+          gemArray.push(x);
         }
+
       }
 
       //Loop to create four gem elements with mystery values attached.
@@ -51,7 +52,7 @@ $(window).on('load', function(e){
         gemPic.attr("src", "assets/images/gem"+(i+1)+".png");
 
         //Connecting mystery prices to the gems.
-        gemPic.attr("data-gemPrice", gemArray[i]);
+        gemPic.attr("data-gemprice", gemArray[i]);
 
         //Adding these
         $("#choiceGems").append(gemPic);
