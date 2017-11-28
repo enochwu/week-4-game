@@ -20,7 +20,6 @@ $(window).on('load', function(e){
   function reset() {
     walletOfShame = 0
     $("#wallet").text('$' + walletOfShame);
-    $( "#choiceGems" ).empty();
     gemArray = [];
   }
 
@@ -31,36 +30,41 @@ $(window).on('load', function(e){
 
         //Assuring there are not duplicates
         if (gemArray.indexOf(x) == -1) {
-          gemArray.push(x);
+          gemArray.push(x)
         }
-
       }
 
+      for (var i = 0; i < gemArray.length; i++) {
+        //Connecting mystery prices to the gems.
+        $(".gemImg."+i).attr("data-gemprice", gemArray[i]);
+      }
+
+  }
+
+  function gemDisplay() {
       //Loop to create four gem elements with mystery values attached.
       //Tweaking code from a previous class Assignment
-      for (var i = 0; i < gemArray.length; i++) {
+      for (var i = 0; i < 4; i++) {
 
         //Defining a variable to hold element tag for an image, which jQuery will create
         var gemPic = $("<img>");
 
         //Adding a class to each instance of an element created by this loop/
-        gemPic.addClass("gemImg");
+        gemPic.addClass("gemImg "+i);
 
         //Each gemPic will be given a dynamically generated src link to an image
         //This is a problem. We want different images, not just one
         //Problem solved simply by cutting the string apart and injecting index. Cool beans.
         gemPic.attr("src", "assets/images/gem"+(i+1)+".png");
 
-        //Connecting mystery prices to the gems.
-        gemPic.attr("data-gemprice", gemArray[i]);
-
         //Adding these
         $("#choiceGems").append(gemPic);
       }
-    }
+  }
 
   //Calling the randomizer to give inital values to budget and gems.
   randomizer();
+  gemDisplay();
   gemFormation();
   console.log(gemArray);
   //Stuff that happens when a user clicks on shiny gems. The meat of the game.
