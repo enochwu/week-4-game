@@ -1,4 +1,4 @@
-$(window).on('load', function(e){
+$(document).ready(function() {
 
   var budget4Bling ;
   var walletOfShame = 0;
@@ -84,29 +84,46 @@ $(window).on('load', function(e){
     // We then add code to sum up the values (gemPrice)'s.
     // Every click on a gem, is a buy which incrases the doller amount
     // in the wallet of shame (walletOfShame variable).
-    walletOfShame += gemPrice;
+
+    if (walletOfShame < budget4Bling){
+      walletOfShame += gemPrice;
+      $("#wallet").text('$' + walletOfShame);
+    } else {
+
+    }
 
     //Display the ever-increasing amount of money spent on bling in HTML.
-    $("#wallet").text('$' + walletOfShame);
+    function endGame(){
+      reset();
+      randomizer();
+      gemFormation();
+    }
 
     if (walletOfShame === budget4Bling) {
-      winCount++
-      $("#winner").text(winCount);
-      reset();
-      randomizer();
-      gemFormation();
-      console.log(gemArray);
+      setTimeout(endGame, 350)
+      console.log('endGame activated')
+      function winCounter() {
+        winCount++
+        $("#winner").text(winCount);
+      }
+      setTimeout(winCounter, 100)
+      console.log('Wins')
     }
     else if (walletOfShame >= budget4Bling) {
-      lossCount++
-      $("#loser").text(lossCount);
-      //Insert reset here
-      reset();
-      randomizer();
-      gemFormation();
-      console.log(gemArray);
+      setTimeout(endGame, 350)
+      console.log('endGame activated')
+      function lossCounter() {
+        lossCount++
+        $("#loser").text(lossCount)
+      }
+      setTimeout(lossCounter, 100)
+      console.log('Loser')
     }
 
   });
+
+
+
+  console.log(walletOfShame+' vs '+budget4Bling)
 
 });
