@@ -50,7 +50,7 @@ $(document).ready(function() {
         var gemPic = $("<img>");
 
         //Adding a class to each instance of an element created by this loop/
-        gemPic.addClass("gemImg "+i);
+        gemPic.addClass("img-responsive gemImg "+i);
 
         //Each gemPic will be given a dynamically generated src link to an image
         //This is a problem. We want different images, not just one
