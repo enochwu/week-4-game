@@ -67,6 +67,7 @@ $(document).ready(function() {
   gemDisplay();
   gemFormation();
   console.log(gemArray);
+  
   //Stuff that happens when a user clicks on shiny gems. The meat of the game.
   $(".gemImg").on("click", function() {
 
@@ -92,13 +93,13 @@ $(document).ready(function() {
 
     }
 
-    //Display the ever-increasing amount of money spent on bling in HTML.
     function endGame(){
       reset();
       randomizer();
       gemFormation();
     }
 
+    //Display the ever-increasing amount of money spent on bling in HTML.
     if (walletOfShame === budget4Bling) {
       setTimeout(endGame, 350)
       console.log('endGame activated')
